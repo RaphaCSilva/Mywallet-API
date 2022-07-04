@@ -2,4 +2,6 @@ import { Router } from "express";
 
 const atividadesRouter = Router();
 
-atividadesRouter.get("/atividades", )
+atividadesRouter.get("/atividades", );
+
+export default atividadesRouter;

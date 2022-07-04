@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import chalk from 'chalk';
 import authRouter from './routes/authRouter.js';
-import atividadesRouter from './routes/atividadesRouter.js'
+import atividadesRouter from './routes/atividadesRouter.js';
 
 
 
