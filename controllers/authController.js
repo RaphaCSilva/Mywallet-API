@@ -7,9 +7,9 @@ export async function cadastro(req, res) {
     try {
       const salt = 10;
       await db.collection("usuarios").insertOne({
-          nome,
-          email,
-          senha: bcrypt.hashSync(senha, salt)
+          nome: req.body.nome,
+          email: req.body.email,
+          senha: bcrypt.hashSync(req.body.senha, salt)
       })
       res.sendStatus(201);
     } catch (e) {
@@ -25,7 +25,7 @@ export async function login(req, res) {
             return res.sendStatus(404);
         }
         if(usuario && bcrypt.compareSync(req.body.senha, usuario.senha)){
-            const token  = uuid.v4();
+            const token  = uuid();
             await db.collection("sessions").insertOne({
                 userId: usuario._id,
                 token

@@ -10,4 +10,4 @@ export const authCadastroSchema = joi.object({
 export const authLoginSchema =  joi.object({
     email: joi.string().email().required(),
     senha: joi.string().required()
-});
+}); 
